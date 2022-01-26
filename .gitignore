@@ -1,8 +1,7 @@
-
-/work
-*.do
-*.wlf
-*.mpf
-*.bak
-*.swp
-*.mti
+work/
+_.do
+_.wlf
+_.mpf
+_.bak
+_.swp
+_.mti
