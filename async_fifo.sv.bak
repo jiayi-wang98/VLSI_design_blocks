@@ -120,39 +120,39 @@ reg push,pop;
 async_fifo #(.DWIDTH(8),.FIFO_DEPTH(8))
 	dut(wclk,rclk,rstn,push,din, pop,dout,fifo_empty,fifo_full,overflow,underflow);
 initial begin
-	#0 din<=8'h0;
-	#50 din<=8'b00000001;
-	#80 din<=8'h2;
-	#70 din<=8'h3;
-	#79 din<=8'h4;
-	#80 din<=8'h5;
-	#40 din<=8'h6;
-	#60 din<=8'h7;
-	#50 din<=8'h8;
-	#50 din<=8'h9;
-	#20 din<=8'h10;
-	#70 din<=8'h11;
-	#80 din<=8'h12;
-	#19 din<=8'h13;
-	#10 din<=8'h14;
-	#80 din<=8'h15;
+	#0 din=8'h0;
+	#50 din=8'b00000001;
+	#80 din=8'h2;
+	#70 din=8'h3;
+	#79 din=8'h4;
+	#80 din=8'h5;
+	#40 din=8'h6;
+	#60 din=8'h7;
+	#50 din=8'h8;
+	#50 din=8'h9;
+	#20 din=8'h10;
+	#70 din=8'h11;
+	#80 din=8'h12;
+	#19 din=8'h13;
+	#10 din=8'h14;
+	#80 din=8'h15;
 	end
 
 initial begin
-	wclk<=1'b0;
-	push<=1'b0;
-	rclk<=1'b0;
-	pop<=1'b0;
+	wclk=1'b0;
+	push=1'b0;
+	rclk=1'b0;
+	pop=1'b0;
 end
 
-always #50 wclk<=~wclk; 
-always #10 rclk<=~rclk;
+always #50 wclk=~wclk; 
+always #10 rclk=~rclk;
 
-initial rstn<=1'b0;
-initial #50 rstn<=1'b1;
+initial rstn=1'b0;
+initial #50 rstn=1'b1;
 
-initial #50 push<=1'b1;
-initial #50 pop<=1'b1;
+initial #50 push=1'b1;
+initial #50 pop=1'b1;
 initial
 $monitor( "$time data_out,empty ,full= %d %d %d",dout,fifo_empty,fifo_full);
 endmodule
